@@ -7,22 +7,24 @@ import {
   Button,
   ScrollView,
   FlatList,
+  TouchableOpacity,
 } from "react-native";
 
 const GoalItem = (props) => {
   return (
-    <View style={styles.listItem}>
-      <Text>{props.title}</Text>
-    </View>
+    <TouchableOpacity
+      underlayColor="red"
+      activeOpacity={0.5}
+      onPress={props.onDelete.bind(this, props.id)}
+    >
+      <View style={styles.listItem}>
+        <Text>{props.title}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
-export default GoalItem;
-
 const styles = StyleSheet.create({
-  screen: {
-    padding: 50,
-  },
   listItem: {
     padding: 10,
     backgroundColor: "#ccc",
@@ -30,15 +32,6 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderWidth: 1,
   },
-  inputContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  input: {
-    width: "80%",
-    borderColor: "black",
-    borderWidth: 1,
-    padding: 10,
-  },
 });
+
+export default GoalItem;

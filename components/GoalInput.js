@@ -38,13 +38,17 @@ const GoalInput = (props) => {
           value={enteredGoal}
         />
         <View style={styles.ButtonContainer}>
-          <Button
-            style={styles.cancelButton}
-            color="red"
-            title="Cancel"
-            onPress={props.onCancelGoal}
-          />
-          <Button title="ADD" onPress={addGoalHandler} />
+          <View style={styles.button}>
+            <Button
+              style={styles.cancelButton}
+              color="red"
+              title="Cancel"
+              onPress={props.onCancelGoal}
+            />
+          </View>
+          <View style={styles.button}>
+            <Button title="ADD" onPress={addGoalHandler} />
+          </View>
         </View>
         <Icon
           raised
@@ -61,6 +65,9 @@ const GoalInput = (props) => {
 const styles = StyleSheet.create({
   screen: {
     padding: 50,
+  },
+  button:{
+    width: "40%"
   },
   cancelButton: {
     marginBottom: 10,
@@ -81,8 +88,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    width: "40%"
-
+    width: "60%",
   },
   input: {
     width: "80%",

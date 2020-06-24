@@ -17,6 +17,9 @@ export default function App() {
   const [listGoals, setListGoals] = useState([]);
 
   const addGoalHandler = (goalTitle) => {
+    if(goalTitle.length === 0){
+      return;
+    }
     setListGoals((listGoals) => [
       ...listGoals,
       { id: Math.random().toString(), value: goalTitle },
